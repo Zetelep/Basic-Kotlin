@@ -86,4 +86,51 @@ fun main(){
      */
     println(oplist.sum()) //10
     println(oplist.sortedDescending()) // 4,3,2,1
+
+    //Data Manipulation//
+
+    /* //fold//
+     * fold(R,(R,T) ->R):R
+     * R is an initial value and first element
+     * T is the next element
+     * :R is means the return from the iteration
+     */
+    val listNUmbers = listOf(1,2,3,4)
+    val sumWithFold = listNUmbers.fold(0){ current, item -> current+ item}
+    println(sumWithFold) //->10
+
+    /* //drop//
+     *  Drop is a function tu cut item in a collections
+     *  collectName.drop(3)
+     * it will delete item in index 0,1,2
+     * use .dropLast to cut from end of the collections
+     */
+    val dropList = listNUmbers.drop(3)
+    println(dropList) // -> 4
+
+    /* //take//
+     * is a vice versa drop
+     */
+    val takeList = listNUmbers.take(3)
+    println(takeList) //-> 1,2,3
+
+    /*
+     * //slice//
+     *  slice is same like take but taking item from an index to an index(range)
+     * slice can use operator step
+     */
+    val sliceList = listNUmbers.slice(1..2)
+    println(sliceList) // -> 2,3 (taking index 1 and 2)
+
+    /* //distinct//
+     *  is used to take out the duplicate item
+     */
+    val listCon = listOf('a','a','b','b')
+    println(listCon.distinct()) //-> a ,b
+
+    /* //chunked//
+     * this function sam as split(), to split a string
+     */
+    val words = "CALCULUS"
+    println(words.chunked(4)) // -> Calc , ulus
 }
